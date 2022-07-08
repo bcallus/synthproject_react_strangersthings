@@ -12,6 +12,7 @@ import {
 } from "./components";
 
 const App = () => {
+
   return (
     <div> 
       <Navbar />
