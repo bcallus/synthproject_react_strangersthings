@@ -2,16 +2,23 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 
 // will need to import each component
-/*import {
-  Component1,
-  Component2,
-  etc,
-  etc,
-} from "./components";*/
+import {
+  Navbar,
+  Home,
+  Posts,
+  Profile,
+  //etc,
+  //etc,
+} from "./components";
 
 const App = () => {
   return (
-    <div>Test</div>
+    <div> 
+      <Navbar />
+      <Home />
+      <Posts />
+      <Profile />
+    </div>
   )
 
 };
