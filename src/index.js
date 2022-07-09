@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom/client';
+import { BrowserRouter as Router } from 'react-router-dom'
+
 
 import { fetchAllPosts } from './api'
 
@@ -45,7 +47,11 @@ const App = () => {
 };
 
 const root = ReactDOM.createRoot(document.getElementById('app'));
-root.render(<App />);
+root.render(
+  <Router>
+    <App />
+  </Router>
+);
 
 /*next steps:
 make routes for the pages, use ryan's repo on token review

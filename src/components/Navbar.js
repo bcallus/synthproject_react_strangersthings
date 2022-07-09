@@ -1,4 +1,7 @@
 import React from 'react';
+import { Route, Routes } from 'react-router-dom';
+
+import Home from './Home'
 
 const Navbar = () => {
     return (
@@ -7,10 +10,15 @@ const Navbar = () => {
 
             {/* turn these into links */}
             <div className='navbar-tabs'> 
-                <h2>Home</h2>
-                <h2>Posts</h2>
-                <h2>Profile</h2>
-                <h2>Log In(out)</h2> 
+                <Routes>
+                    {/* <Route></Route> */}
+               
+                {/* <a href="/posts">Posts</a>
+                <a href="/profile">Profile</a>
+                {/* make a ternary if isLogged then render log out, if not render log in, something like that */}
+                {/* <a href="/login">Log In</a>  */}
+                {/* <a href="/logout">Log Out</a> */} 
+                </Routes> 
             </div>
         </div>
     )
