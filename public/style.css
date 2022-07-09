@@ -4,6 +4,7 @@
 
 body {
     margin: 0;
+    padding: 1rem;
 }
 
 .navbar {
@@ -17,4 +18,9 @@ body {
 .navbar-tabs {
     display: flex;
     gap: 1rem;
+}
+
+.individual-post { /* fix this later */
+    background-color: rgb(196, 211, 240);
+    padding: 1rem; 
 }
