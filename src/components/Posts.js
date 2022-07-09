@@ -11,6 +11,7 @@ const Posts = (props) => {
         <div>
         {props.postsList.posts ? props.postsList.posts.map(post => 
             <Post 
+            key={post._id}
             post={post}
             />
         ) : null}

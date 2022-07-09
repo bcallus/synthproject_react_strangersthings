@@ -16,7 +16,7 @@ import {
 const App = () => {
 
   const [postsList, setPostsList] = useState([]);
-  const [post, setPost] = useState({});
+  // const [post, setPost] = useState({});
 
 
     useEffect(() => {
@@ -46,3 +46,7 @@ const App = () => {
 
 const root = ReactDOM.createRoot(document.getElementById('app'));
 root.render(<App />);
+
+/*next steps:
+make routes for the pages, use ryan's repo on token review
+make register component, use the same repo */

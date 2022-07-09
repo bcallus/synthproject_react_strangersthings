@@ -3,8 +3,8 @@ import React from 'react';
 const Post = (props) => {
 
     return (
-
-        <div className="individual-post" key={props.post._id}>
+        //possibly add ternaries here, if this exists, render it, if not, don't
+        <div className="individual-post">
                 <h2>{props.post.title}</h2>
                 <p>{props.post.description}</p>
                 <p>{props.post.price}</p>
@@ -12,7 +12,6 @@ const Post = (props) => {
                 <p>{props.post.locaiton}</p>
         </div>
     )
-
 }
 
 export default Post;
