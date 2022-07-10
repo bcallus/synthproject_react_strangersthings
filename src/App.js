@@ -10,6 +10,7 @@ import {
   Posts,
   Profile,
   Login,
+  Register,
   //etc,
   //etc,
 } from "./components";
@@ -35,7 +36,8 @@ const App = () => {
         <Route path="/" element={<Home />}></Route>
         <Route path="/posts" element={<Posts postsList={postsList} />}></Route>
         <Route path="/profile" element={<Profile />}></Route>   
-        <Route path="/login" element={<Login />}></Route>      
+        <Route path="/login" element={<Login />}></Route>
+        <Route path="/register" element={<Register />}></Route>      
       </Routes>
     </div>
   );
