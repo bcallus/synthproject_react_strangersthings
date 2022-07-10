@@ -1,16 +1,38 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { registerUser } from '../api';
 
-const Register = () => {
+
+const Register = ({ setToken }) => {
+
+    const [username, setUsername] = useState();
+    const [password, setPassword] = useState();
+
+    const handleSubmit = async event => {
+        event.preventDefault();
+        
+        const data = await registerUser({
+            username,
+            password
+        });
+        const token = data.data.token;
+        console.log("data", data)
+        console.log("Token in Register", token)
+        console.log("set Token in Register", setToken)
+        localStorage.setItem("token", JSON.stringify(token))
+        setToken(token);
+
+    }
+
     return (
-        <form>
+        <form onSubmit={handleSubmit}>
             <h2>Register New Account</h2>
             <label>
                 <p>Username</p>
-                <input />
+                <input type="text" onChange={event => setUsername(event.target.value)} />
             </label>
             <label>
                 <p>Password</p>
-                <input />
+                <input type="password" onChange={event => setPassword(event.target.value)} />
             </label>
             <div>
                 <button type="submit" >Submit</button>

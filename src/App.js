@@ -28,6 +28,23 @@ const App = () => {
 
   // console.log("postsList", postsList)
   // console.log("post", post)
+    
+    const getToken = () => {
+        const tokenString = localStorage.getItem('token');
+        const userToken = JSON.parse(tokenString);
+        console.log("userToken", userToken)
+        return userToken.token //there was a ? here on repo
+    }
+    const [token, setToken] = useState();
+
+    console.log("token in App.js", token)
+
+    if(!token){
+          
+        console.log("Im hiting else if ");
+        return <Register setToken={setToken} />
+      }
+
 
   return (
     <div /*className="App"*/>
@@ -37,7 +54,7 @@ const App = () => {
         <Route path="/posts" element={<Posts postsList={postsList} />}></Route>
         <Route path="/profile" element={<Profile />}></Route>   
         <Route path="/login" element={<Login />}></Route>
-        <Route path="/register" element={<Register />}></Route>      
+              <Route path="/register" element={<Register setToken={setToken} />}></Route>      
       </Routes>
     </div>
   );
