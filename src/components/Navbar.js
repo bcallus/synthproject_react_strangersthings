@@ -1,25 +1,28 @@
 import React from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-import Home from './Home'
 
 const Navbar = () => {
     return (
         <div className='navbar'>
             <h1>Stranger's Things</h1>
-
-            {/* turn these into links */}
-            <div className='navbar-tabs'> 
-                <Routes>
-                    {/* <Route></Route> */}
-               
-                {/* <a href="/posts">Posts</a>
-                <a href="/profile">Profile</a>
-                {/* make a ternary if isLogged then render log out, if not render log in, something like that */}
-                {/* <a href="/login">Log In</a>  */}
-                {/* <a href="/logout">Log Out</a> */} 
-                </Routes> 
-            </div>
+            <nav className="navbar-tabs">
+                <ul>
+                    <li>
+                        <Link to="/" >Home</Link>
+                    </li>
+                    <li>
+                        <Link to="/posts" >Posts</Link>
+                    </li>
+                    <li>
+                        <Link to="/profile" >Profile</Link>
+                    </li>
+                    <li>
+                        <Link to="/login">Log In</Link>
+                    </li>
+                    {/* don't forget a register link, can be from within one of the tabs*/}
+                </ul>
+            </nav>
         </div>
     )
 }
