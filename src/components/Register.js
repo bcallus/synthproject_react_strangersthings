@@ -15,12 +15,13 @@ const Register = ({ setToken }) => {
             password
         });
         const token = data.data.token;
-        // console.log("username", username, "password", password)
+        console.log("username", username, "password", password)
         console.log("data", data)
         console.log("Token in Register", token)
         console.log("set Token in Register", setToken)
         localStorage.setItem("token", JSON.stringify(token))
         setToken(token);
+        data.success ? alert("You have sucessfully registered. Click 'Log In' to continue.") : alert("Error creating account. Please try again.")
 
     }
 
@@ -29,11 +30,11 @@ const Register = ({ setToken }) => {
             <h2>Register New Account</h2>
             <label>
                 <p>Username</p>
-                <input type="text" onChange={event => setUsername(event.target.value)} required/>
+                <input type="text" minLength="5" onChange={event => setUsername(event.target.value)} required/>
             </label>
             <label>
                 <p>Password</p>
-                <input type="password" onChange={event => setPassword(event.target.value)} required/>
+                <input type="password" minLength="5" onChange={event => setPassword(event.target.value)} required/>
             </label>
             <div>
                 <button type="submit" >Submit</button>
