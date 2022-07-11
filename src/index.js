@@ -13,5 +13,5 @@ root.render(
 );
 
 /*next steps:
-make routes for the pages, use ryan's repo on token review
-make register component, use the same repo */
+Perhaps you want to set a min property on password and username length, and you should definitely make them required on the form inputs.
+*/
