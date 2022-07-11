@@ -39,24 +39,28 @@ const App = () => {
 
     console.log("token in App.js", token)
 
-    if(!token){
-          
-        console.log("Im hiting else if ");
-        return <Register setToken={setToken} />
-      }
-
-
-  return (
-    <div /*className="App"*/>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />}></Route>
-        <Route path="/posts" element={<Posts postsList={postsList} />}></Route>
-        <Route path="/profile" element={<Profile />}></Route>   
-        <Route path="/login" element={<Login />}></Route>
-              <Route path="/register" element={<Register setToken={setToken} />}></Route>      
-      </Routes>
-    </div>
+    //fix this ternary
+    return (
+        // token ?
+            <div>
+            <Navbar token={ token } />
+                <Routes>
+                    <Route exact path="/" element={<Home />}></Route>
+                    <Route path="/posts" element={<Posts postsList={postsList} />}></Route>
+                    <Route path="/profile" element={<Profile />}></Route>
+                    <Route path="/login" element={<Login />}></Route>
+                    <Route path="/register" element={<Register setToken={setToken} />}></Route>
+                </Routes>
+            </div>
+            // : <div>
+            //     <Navbar />
+            //     <Routes>
+            //         <Route exact path="/" element={<Home />}></Route>
+            //         <Route path="/posts" element={<Posts postsList={postsList} />}></Route>
+            //         <Route path="/login" element={<Login />}></Route>
+            //         <Route path="/register" element={<Register setToken={setToken} />}></Route>
+            //     </Routes>
+            // </div>
   );
 };
 

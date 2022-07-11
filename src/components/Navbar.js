@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 
-const Navbar = () => {
+const Navbar = ({token}) => {
     return (
         <div className='navbar'>
             <h1>Stranger's Things</h1>
@@ -15,7 +15,7 @@ const Navbar = () => {
                         <Link to="/posts" >Posts</Link>
                     </li>
                     <li>
-                        <Link to="/profile" >Profile</Link>
+                        {token ? <Link to="/profile" >Profile</Link> : null}
                     </li>
                     <li>
                         <Link to="/login">Log In</Link>
