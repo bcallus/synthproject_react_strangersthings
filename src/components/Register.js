@@ -15,6 +15,7 @@ const Register = ({ setToken }) => {
             password
         });
         const token = data.data.token;
+        // console.log("username", username, "password", password)
         console.log("data", data)
         console.log("Token in Register", token)
         console.log("set Token in Register", setToken)
