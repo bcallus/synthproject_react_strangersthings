@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import { registerUser } from '../api';
 
 
-const Register = ({ setToken }) => {
+const Register = ({ setToken, username, setUsername, password, setPassword }) => {
 
-    const [username, setUsername] = useState();
-    const [password, setPassword] = useState();
+    // const [username, setUsername] = useState();
+    // const [password, setPassword] = useState();
 
     const handleSubmit = async event => {
         event.preventDefault();
@@ -21,7 +21,7 @@ const Register = ({ setToken }) => {
         console.log("set Token in Register", setToken)
         localStorage.setItem("token", JSON.stringify(token))
         setToken(token);
-        data.success ? alert("You have sucessfully registered. Click 'Log In' to continue.") : alert("Error creating account. Please try again.")
+        data.success ? alert("You have successfully registered. Click 'Log In' to continue.") : alert("Error creating account. Please try again.") //fix error alert
 
     }
 

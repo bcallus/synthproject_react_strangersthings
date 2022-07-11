@@ -16,7 +16,9 @@ import {
 } from "./components";
 
 const App = () => {
-  const [postsList, setPostsList] = useState([]);
+    const [postsList, setPostsList] = useState([]);
+    const [username, setUsername] = useState();
+    const [password, setPassword] = useState();
   // const [post, setPost] = useState({});
 
   useEffect(() => {
@@ -48,8 +50,8 @@ const App = () => {
                     <Route exact path="/" element={<Home />}></Route>
                     <Route path="/posts" element={<Posts postsList={postsList} />}></Route>
                     <Route path="/profile" element={<Profile />}></Route>
-                    <Route path="/login" element={<Login />}></Route>
-                    <Route path="/register" element={<Register setToken={setToken} />}></Route>
+                <Route path="/login" element={<Login username={username} setUsername={setUsername} password={password} setPassword={setPassword} />}></Route>
+                <Route path="/register" element={<Register setToken={setToken} username={username} setUsername={setUsername} password={password} setPassword={setPassword} />}></Route>
                 </Routes>
             </div>
             // : <div>

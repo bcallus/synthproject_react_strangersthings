@@ -15,4 +15,5 @@ root.render(
 /*next steps:
 1. optionally store token in localStorage if you want to save it for automatically logging in the user upon the next app load???
 1. If register is unsucessful, add alert?
+3. if logged in, show log out button
 */
