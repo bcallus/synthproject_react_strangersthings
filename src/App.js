@@ -34,12 +34,12 @@ const App = () => {
     const getToken = () => {
         const tokenString = localStorage.getItem('token');
         const userToken = JSON.parse(tokenString);
-        console.log("userToken", userToken)
+        // console.log("userToken", userToken)
         return userToken.token //there was a ? here on repo
     }
     const [token, setToken] = useState();
 
-    console.log("token in App.js", token)
+    // console.log("token in App.js", token)
 
     //fix this ternary
     return (

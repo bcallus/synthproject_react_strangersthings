@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { registerUser } from '../api';
 
 
@@ -9,20 +9,30 @@ const Register = ({ setToken, username, setUsername, password, setPassword }) =>
 
     const handleSubmit = async event => {
         event.preventDefault();
-        
-        const data = await registerUser({
-            username,
-            password
-        });
-        const token = data.data.token;
-        console.log("username", username, "password", password)
-        console.log("data", data)
-        console.log("Token in Register", token)
-        console.log("set Token in Register", setToken)
-        localStorage.setItem("token", JSON.stringify(token))
-        setToken(token);
-        data.success ? alert("You have successfully registered. Click 'Log In' to continue.") : alert("Error creating account. Please try again.") //fix error alert
+       if (confirmPassword()) {
+            const data = await registerUser({
+                username,
+                password
+            });
+            const token = data.data.token;
+            console.log("username", username, "password", password)
+            console.log("data", data)
+            console.log("Token in Register", token)
+            console.log("set Token in Register", setToken)
+            localStorage.setItem("token", JSON.stringify(token))
+            setToken(token);
+            data.success ? alert(`${data.data.message}`) : alert(`${data.error.message}`)
+        } 
+        }
 
+    const confirmPassword = () => {
+        const password = document.querySelector('input[name=password]');
+        const confirm = document.querySelector('input[name=confirm]');
+        if (confirm.value !== password.value) {
+            alert("Passwords must match.")
+        } else {
+            return true;
+        }
     }
 
     return (
@@ -34,7 +44,11 @@ const Register = ({ setToken, username, setUsername, password, setPassword }) =>
             </label>
             <label>
                 <p>Password</p>
-                <input type="password" minLength="5" onChange={event => setPassword(event.target.value)} required/>
+                <input type="password" name="password" minLength="5" onChange={event => setPassword(event.target.value)} required/>
+            </label>
+            <label>
+                <p>Confirm Password</p>
+                <input type="password" name="confirm" minLength="5" required/>
             </label>
             <div>
                 <button type="submit" >Submit</button>

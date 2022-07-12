@@ -12,7 +12,7 @@ const Login = ({username, password, setUsername, setPassword}) => {
             password
         });
         console.log(data)
-        data.success ? alert("You have successfully Logged In!") : alert("Incorrect Log In information. Please try again.")
+       data.success ? alert(`${data.data.message}`) : alert(`${data.error.message}`)
     }
 
         return (
