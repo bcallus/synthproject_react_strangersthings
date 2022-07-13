@@ -21,3 +21,7 @@ root.render(
 /* Things to fix:
 1. In Reigster component, figure out how to alert if account already exists. At one point it was console logging data swith an object message saying user already exists, not sure where it went
  */
+
+/* Questions
+1.If i am destructuring props in the componenets, do i need to set them in the routes?
+ */

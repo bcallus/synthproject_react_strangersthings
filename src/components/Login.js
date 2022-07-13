@@ -14,7 +14,7 @@ const Login = ({ username, password, setUsername, setPassword, setToken, isLogge
       password,
     });
       if (data.success) {
-          setIsLoggedIn(true)
+        setIsLoggedIn(true)
         console.log("data", data)
         console.log("username: ", username, "password: ", password)
         const token = data.data.token

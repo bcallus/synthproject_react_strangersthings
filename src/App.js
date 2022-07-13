@@ -10,6 +10,7 @@ import {
   Posts,
   Profile,
   Login,
+  Logout,
   Register,
   //etc,
   //etc,
@@ -47,7 +48,7 @@ const App = () => {
   return (
     // token ?
     <div>
-          <Navbar token={token} isLoggedIn={isLoggedIn} />
+      <Navbar token={token} isLoggedIn={isLoggedIn} />
       <Routes>
         <Route exact path="/" element={<Home />}></Route>
         <Route path="/posts" element={<Posts postsList={postsList} />}></Route>
@@ -66,6 +67,12 @@ const App = () => {
             />
           }
         ></Route>
+              <Route path="/logout" element={<Logout 
+                  setIsLoggedIn={setIsLoggedIn}
+                  setToken={setToken}
+                //   isLoggedIn={isLoggedIn} //just used this for console logs in the Logout component
+                //   token={token}           //can delete if not needed there
+        />}></Route>
         <Route
           path="/register"
           element={
