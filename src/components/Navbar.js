@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 
-const Navbar = ({token}) => {
+const Navbar = ({token, isLoggedIn}) => {
     return (
         <div className='navbar'>
             <h1>Stranger's Things</h1>
@@ -18,7 +18,7 @@ const Navbar = ({token}) => {
                         {token ? <Link to="/profile" >Profile</Link> : null}
                     </li>
                     <li>
-                        <Link to="/login">Log In</Link>
+                        {isLoggedIn ? <Link to="/logout">Log Out</Link> : <Link to="/login">Log In</Link>}
                     </li>
                     {/* don't forget a register link, can be from within one of the tabs*/}
                 </ul>
