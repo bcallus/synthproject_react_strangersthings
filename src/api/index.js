@@ -57,3 +57,20 @@ export async function logInUser({ username, password }) {
         console.error(error);
     }
 }
+
+export async function getUserProfile({username, password, token}) {
+    try {
+        return fetch(`${BASE_URL}/users/me`, {
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            }
+        }).then(response => response.json())
+            .then(result => {
+                return result;
+        })
+    }
+    catch (error) {
+        console.error(error);
+    }
+}

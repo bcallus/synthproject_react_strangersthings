@@ -2,14 +2,14 @@ import React from 'react'
 import Post from './Post'
 
 
-const Posts = (props) => {
+const Posts = ({postsList}) => {
     
-    console.log("postsList", props.postsList)
-    console.log("props.postsList.posts", props.postsList.posts)
+    console.log("postsList", postsList)
+    console.log("props.postsList.posts", postsList.posts)
 
     return (
         <div>
-        {props.postsList.posts ? props.postsList.posts.map(post => 
+        {postsList.posts ? postsList.posts.map(post => 
             <Post 
             key={post._id}
             post={post}

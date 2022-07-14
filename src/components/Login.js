@@ -1,10 +1,17 @@
 import React from "react";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 import { logInUser } from "../api";
 
-const Login = ({ username, password, setUsername, setPassword, setToken, isLoggedIn, setIsLoggedIn }) => {
-
-    const navigate = useNavigate();
+const Login = ({
+  username,
+  password,
+  setUsername,
+  setPassword,
+  setToken,
+  isLoggedIn,
+  setIsLoggedIn,
+}) => {
+  const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -13,18 +20,18 @@ const Login = ({ username, password, setUsername, setPassword, setToken, isLogge
       username,
       password,
     });
-      if (data.success) {
-        setIsLoggedIn(true)
-        console.log("data", data)
-        console.log("username: ", username, "password: ", password)
-        const token = data.data.token
-        setToken(token) 
-        console.log("token in login", token)
-        alert(`${data.data.message}`)
-        navigate('/profile')
-      } else {
-        alert(`${data.error.message}`);
-      } 
+    if (data.success) {
+      setIsLoggedIn(true);
+    //   console.log("data", data);
+    //   console.log("username: ", username, "password: ", password);
+      const token = data.data.token;
+      setToken(token);
+    //   console.log("token in login", token);
+      alert(`${data.data.message}`);
+      navigate("/profile");
+    } else {
+      alert(`${data.error.message}`);
+    }
   };
 
   return (
@@ -35,6 +42,7 @@ const Login = ({ username, password, setUsername, setPassword, setToken, isLogge
         <input
           type="text"
           onChange={(event) => setUsername(event.target.value)}
+          minLength="5"
           required
         />
       </label>
@@ -43,6 +51,7 @@ const Login = ({ username, password, setUsername, setPassword, setToken, isLogge
         <input
           type="password"
           onChange={(event) => setPassword(event.target.value)}
+          minLength="5"
           required
         />
       </label>

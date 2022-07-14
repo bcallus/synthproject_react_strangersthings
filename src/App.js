@@ -52,7 +52,10 @@ const App = () => {
       <Routes>
         <Route exact path="/" element={<Home />}></Route>
         <Route path="/posts" element={<Posts postsList={postsList} />}></Route>
-        <Route path="/profile" element={<Profile />}></Route>
+              <Route path="/profile" element={<Profile
+                  token={token} 
+                  username={username}
+                  />}></Route>
         <Route
           path="/login"
           element={
