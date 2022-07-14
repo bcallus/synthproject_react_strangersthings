@@ -59,7 +59,7 @@ const App = () => {
           element={<Posts postsList={postsList} isLoggedIn={isLoggedIn} />}
         ></Route>
 
-        <Route path="/posts/add" element={<AddPost />}></Route>
+        <Route path="/posts/add" element={<AddPost token={token} />}></Route>
 
         <Route
           path="/profile"

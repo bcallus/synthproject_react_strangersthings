@@ -44,3 +44,15 @@ body {
     padding: 1rem;
     margin-bottom: 1rem;
 }
+
+.add-new-post-form input {
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 3px, solid, blue;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
