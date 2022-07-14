@@ -26,4 +26,6 @@ root.render(
 /* Questions
 1.If i am destructuring props in the componenets, do i need to set them in the routes?
 2. do i need to use the test api routes?
+3. Is it ok to have both token and isLogged in states? They technically are the same thing...
+4. I tried to keep all of my states at top level in App.js, but I don't think some of them need to be that high. Is that ok to keep everything like that and pass everything through props?
  */

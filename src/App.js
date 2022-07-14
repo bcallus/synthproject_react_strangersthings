@@ -21,6 +21,8 @@ const App = () => {
   const [username, setUsername] = useState();
   const [password, setPassword] = useState();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [userPosts, setUserPosts] = useState([]);
+  const [userMessages, setUserMessages] = useState([]);
   // const [post, setPost] = useState({});
 
   useEffect(() => {
@@ -44,18 +46,29 @@ const App = () => {
 
   // console.log("token in App.js", token)
 
-  //fix this ternary
   return (
-    // token ?
     <div>
       <Navbar token={token} isLoggedIn={isLoggedIn} />
+
       <Routes>
         <Route exact path="/" element={<Home />}></Route>
+
         <Route path="/posts" element={<Posts postsList={postsList} />}></Route>
-              <Route path="/profile" element={<Profile
-                  token={token} 
-                  username={username}
-                  />}></Route>
+
+        <Route
+          path="/profile"
+          element={
+            <Profile
+              token={token}
+              username={username}
+              userPosts={userPosts}
+              setUserPosts={setUserPosts}
+              userMessages={userMessages}
+              setUserMessages={setUserMessages}
+            />
+          }
+        ></Route>
+
         <Route
           path="/login"
           element={
@@ -70,12 +83,19 @@ const App = () => {
             />
           }
         ></Route>
-              <Route path="/logout" element={<Logout 
-                  setIsLoggedIn={setIsLoggedIn}
-                  setToken={setToken}
-                //   isLoggedIn={isLoggedIn} //just used this for console logs in the Logout component
-                //   token={token}           //can delete if not needed there
-        />}></Route>
+
+        <Route
+          path="/logout"
+          element={
+            <Logout
+              setIsLoggedIn={setIsLoggedIn}
+              setToken={setToken}
+              //   isLoggedIn={isLoggedIn} //just used this for console logs in the Logout component
+              //   token={token}           //can delete if not needed there
+            />
+          }
+        ></Route>
+
         <Route
           path="/register"
           element={
@@ -90,15 +110,6 @@ const App = () => {
         ></Route>
       </Routes>
     </div>
-    // : <div>
-    //     <Navbar />
-    //     <Routes>
-    //         <Route exact path="/" element={<Home />}></Route>
-    //         <Route path="/posts" element={<Posts postsList={postsList} />}></Route>
-    //         <Route path="/login" element={<Login />}></Route>
-    //         <Route path="/register" element={<Register setToken={setToken} />}></Route>
-    //     </Routes>
-    // </div>
   );
 };
 
