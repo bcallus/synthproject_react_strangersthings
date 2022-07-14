@@ -4,7 +4,7 @@ import Post from './Post'
 import AddPost from './AddPost'
 
 
-const Posts = ({postsList}) => {
+const Posts = ({postsList, isLoggedIn}) => {
     
     console.log("postsList", postsList)
     console.log("props.postsList.posts", postsList.posts)
@@ -13,7 +13,7 @@ const Posts = ({postsList}) => {
         <div>
             <div className="post-page-header">
                 <h1>Posts</h1>
-                <Link to="/posts/add"><AddPost /></Link>
+                {isLoggedIn ? <Link to="/posts/add">Add New Post</Link> : null}
             </div>
         {postsList.posts ? postsList.posts.map(post => 
             <Post 
