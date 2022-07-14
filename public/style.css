@@ -28,6 +28,17 @@ body {
     font-size: 20px;
 }
 
+.post-page-header {
+    display: flex;
+    align-items: center;
+    background-color: rgb(130, 183, 247);
+    padding: 1rem;
+    gap: 1rem;
+}
+.post-page-header a {
+    text-decoration: none;
+}
+
 .individual-post { /* fix this later */
     background-color: rgb(196, 211, 240);
     padding: 1rem;

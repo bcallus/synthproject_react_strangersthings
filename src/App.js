@@ -7,7 +7,8 @@ import { fetchAllPosts } from "./api";
 import {
   Navbar,
   Home,
-  Posts,
+    Posts,
+  AddPost,
   Profile,
   Login,
   Logout,
@@ -53,7 +54,9 @@ const App = () => {
       <Routes>
         <Route exact path="/" element={<Home />}></Route>
 
-        <Route path="/posts" element={<Posts postsList={postsList} />}></Route>
+              <Route path="/posts" element={<Posts postsList={postsList} />}></Route>
+              
+              <Route path="/posts/add" element={<AddPost />}></Route>
 
         <Route
           path="/profile"
@@ -107,7 +110,7 @@ const App = () => {
               setPassword={setPassword}
             />
           }
-        ></Route>
+              ></Route>
       </Routes>
     </div>
   );
