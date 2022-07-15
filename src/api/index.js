@@ -1,9 +1,14 @@
 export const BASE_URL =
   "https://strangers-things.herokuapp.com/api/2204-FTB-ET-WEB-PT";
 
-export async function fetchAllPosts() {
+export async function fetchAllPosts(token) {
   try {
-    const response = await fetch(`${BASE_URL}/posts`);
+      const response = await fetch(`${BASE_URL}/posts`, {
+        headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+    })
     const data = await response.json();
 
     return data;

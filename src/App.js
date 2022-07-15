@@ -23,27 +23,28 @@ const App = () => {
   const [password, setPassword] = useState();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userPosts, setUserPosts] = useState([]);
-  const [userMessages, setUserMessages] = useState([]);
+    const [userMessages, setUserMessages] = useState([]);
+    const [token, setToken] = useState();
   // const [post, setPost] = useState({});
 
-  useEffect(() => {
-    fetchAllPosts().then((results) => {
+    useEffect(() => {
+    fetchAllPosts(token).then((results) => {
       // console.log("post", results.data.posts)
       setPostsList(results.data.posts);
     });
-  }, []);
+  }, [token]);
 
   // console.log("postsList", postsList)
   // console.log("post", post)
 
   const getToken = () => {
     //is this ever called on?
+      //add another useEffect that checks if token exists and user is logged in (is it in local storage)
     const tokenString = localStorage.getItem("token");
     const userToken = JSON.parse(tokenString);
     // console.log("userToken", userToken)
-    return userToken.token; //there was a ? here on repo
+    return userToken.token; //there was a ? here on repo //in 2nd useEffect take this value and set it to setToken and setIsLoggedIn
   };
-  const [token, setToken] = useState();
 
   // console.log("token in App.js", token)
 
