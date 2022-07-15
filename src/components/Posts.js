@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Post from "./Post";
 
-const Posts = ({ postsList, isLoggedIn }) => {
+const Posts = ({ postsList, isLoggedIn, postId, setPostId }) => {
   console.log("postsList from Posts.js", postsList);
 
   return (
@@ -18,6 +18,8 @@ const Posts = ({ postsList, isLoggedIn }) => {
                 post={post}
                 postsList={postsList}
                 isLoggedIn={isLoggedIn}
+                postId={postId}
+                setPostId={setPostId}
                 />
           ))
         : null}

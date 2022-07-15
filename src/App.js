@@ -23,9 +23,9 @@ const App = () => {
   const [password, setPassword] = useState();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userPosts, setUserPosts] = useState([]);
-    const [userMessages, setUserMessages] = useState([]);
-    const [token, setToken] = useState();
-  // const [post, setPost] = useState({});
+  const [userMessages, setUserMessages] = useState([]);
+  const [token, setToken] = useState();
+  const [postId, setPostId] = useState("");
 
     useEffect(() => {
     fetchAllPosts(token).then((results) => {
@@ -57,7 +57,12 @@ const App = () => {
 
         <Route
           path="/posts"
-          element={<Posts postsList={postsList} isLoggedIn={isLoggedIn} />}
+                  element={<Posts
+                      postsList={postsList}
+                      isLoggedIn={isLoggedIn} 
+                      postId={postId}
+                      setPostId={setPostId}
+                      />}
         ></Route>
 
         <Route
