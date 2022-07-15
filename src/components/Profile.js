@@ -7,9 +7,9 @@ const Profile = ({ token, username, userPosts, userMessages, setUserPosts, setUs
       let data = await getUserProfile({ token });
         console.log("getUserProfile data", data)
         setUserPosts(data.data.posts)
-        console.log("user posts", userPosts);
+        console.log("user posts from Profile.js", userPosts);
         setUserMessages(data.data.messages)
-        console.log("user messages", userMessages);
+        console.log("user messages from Profile.js", userMessages);
     }
     fetchMyProfile();
   }, []); //hover over squiggle. what does it mean?

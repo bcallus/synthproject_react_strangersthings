@@ -24,8 +24,7 @@ const AddPost = ({ token, postsList, setPostsList }) => {
         console.log(newPost)
         console.log("postsList from addNewPost", postsList)
         setPostsList([...postsList, newPost])
-        // setPostsList(postsList)
-        // console.log("postsList from addNewPost", postsList)
+        console.log("postsList from addNewPost", postsList)
 
     }
 
