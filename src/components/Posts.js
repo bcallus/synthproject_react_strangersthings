@@ -16,7 +16,8 @@ const Posts = ({ postsList, isLoggedIn }) => {
             <Post
                 key={post._id}
                 post={post}
-                postsList={postsList} 
+                postsList={postsList}
+                isLoggedIn={isLoggedIn}
                 />
           ))
         : null}
