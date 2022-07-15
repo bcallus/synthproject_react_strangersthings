@@ -11,7 +11,7 @@ const Post = ({ post, postsList, isLoggedIn }) => {
 
       {isLoggedIn ? (
         post.isAuthor ? (
-          <button>View</button>
+          <button>View</button> //set id state on click to route page?
         ) : (
           <button>Send Message</button>
         )
