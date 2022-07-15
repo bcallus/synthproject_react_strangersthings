@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import { createNewPost } from "../api";
 
-const AddPost = ({ token }) => {
+const AddPost = ({ token, postsList, setPostsList }) => {
 
     const [title, setTitle] = useState("")
     const [description, setDescription] = useState("")
@@ -20,6 +20,12 @@ const AddPost = ({ token }) => {
             willDeliver,
         });
         console.log("data from new post submission", data)
+        const newPost = data.data.post
+        console.log(newPost)
+        console.log("postsList from addNewPost", postsList)
+        setPostsList([...postsList, newPost])
+        // setPostsList(postsList)
+        // console.log("postsList from addNewPost", postsList)
 
     }
 

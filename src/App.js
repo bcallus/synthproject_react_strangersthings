@@ -29,7 +29,7 @@ const App = () => {
   useEffect(() => {
     fetchAllPosts().then((results) => {
       // console.log("post", results.data.posts)
-      setPostsList(results.data);
+      setPostsList(results.data.posts);
     });
   }, []);
 
@@ -59,7 +59,16 @@ const App = () => {
           element={<Posts postsList={postsList} isLoggedIn={isLoggedIn} />}
         ></Route>
 
-        <Route path="/posts/add" element={<AddPost token={token} />}></Route>
+        <Route
+          path="/posts/add"
+          element={
+            <AddPost
+              token={token}
+              postsList={postsList}
+              setPostsList={setPostsList}
+            />
+          }
+        ></Route>
 
         <Route
           path="/profile"

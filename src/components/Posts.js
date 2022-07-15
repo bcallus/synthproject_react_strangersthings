@@ -6,7 +6,7 @@ import Post from './Post'
 const Posts = ({postsList, isLoggedIn}) => {
     
     console.log("postsList", postsList)
-    console.log("props.postsList.posts", postsList.posts)
+    console.log("props.postsList", postsList)
 
     return (
         <div>
@@ -14,7 +14,7 @@ const Posts = ({postsList, isLoggedIn}) => {
                 <h1>Posts</h1>
                 {isLoggedIn ? <Link to="/posts/add">Add New Post</Link> : null}
             </div>
-        {postsList.posts ? postsList.posts.map(post => 
+        {postsList ? postsList.map(post => 
             <Post 
             key={post._id}
             post={post}
