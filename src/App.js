@@ -25,6 +25,7 @@ const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userPosts, setUserPosts] = useState([]);
   const [userMessages, setUserMessages] = useState([]);
+  const [inboxMessages, setInboxMessages] = useState([]);
   const [token, setToken] = useState();
   const [postId, setPostId] = useState(" "); //has to have a space or character here
   const [message, setMessage] = useState("")
@@ -108,6 +109,8 @@ const App = () => {
               setUserPosts={setUserPosts}
               userMessages={userMessages}
               setUserMessages={setUserMessages}
+              inboxMessages={inboxMessages}
+              setInboxMessages={setInboxMessages}
             />
           }
         ></Route>
