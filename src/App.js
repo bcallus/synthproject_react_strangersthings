@@ -9,6 +9,7 @@ import {
   Home,
   Posts,
   AddPost,
+  PostById,
   Profile,
   Login,
   Logout,
@@ -25,9 +26,9 @@ const App = () => {
   const [userPosts, setUserPosts] = useState([]);
   const [userMessages, setUserMessages] = useState([]);
   const [token, setToken] = useState();
-  const [postId, setPostId] = useState("");
+  const [postId, setPostId] = useState(" "); //has to have a space or character here
 
-    useEffect(() => {
+  useEffect(() => {
     fetchAllPosts(token).then((results) => {
       // console.log("post", results.data.posts)
       setPostsList(results.data.posts);
@@ -39,7 +40,7 @@ const App = () => {
 
   const getToken = () => {
     //is this ever called on?
-      //add another useEffect that checks if token exists and user is logged in (is it in local storage)
+    //add another useEffect that checks if token exists and user is logged in (is it in local storage)
     const tokenString = localStorage.getItem("token");
     const userToken = JSON.parse(tokenString);
     // console.log("userToken", userToken)
@@ -57,12 +58,14 @@ const App = () => {
 
         <Route
           path="/posts"
-                  element={<Posts
-                      postsList={postsList}
-                      isLoggedIn={isLoggedIn} 
-                      postId={postId}
-                      setPostId={setPostId}
-                      />}
+          element={
+            <Posts
+              postsList={postsList}
+              isLoggedIn={isLoggedIn}
+              postId={postId}
+              setPostId={setPostId}
+            />
+          }
         ></Route>
 
         <Route
@@ -74,6 +77,11 @@ const App = () => {
               setPostsList={setPostsList}
             />
           }
+        ></Route>
+
+        <Route
+          path={`posts/:postId`} //this needs work
+          element={<PostById postId={postId} setPostId={setPostId} postsList={postsList} />}
         ></Route>
 
         <Route
