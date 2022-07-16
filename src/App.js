@@ -27,6 +27,7 @@ const App = () => {
   const [userMessages, setUserMessages] = useState([]);
   const [token, setToken] = useState();
   const [postId, setPostId] = useState(" "); //has to have a space or character here
+  const [message, setMessage] = useState("")
   //   const [postById, setPostById] = useState({}); //dont think i need this
 
   useEffect(() => {
@@ -91,6 +92,8 @@ const App = () => {
               //   postById={postById}
               //   setPostById={setPostById}
               token={token}
+              message={message}
+              setMessage={setMessage}
             />
           }
         ></Route>

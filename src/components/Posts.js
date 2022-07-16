@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Post from "./Post";
 
 const Posts = ({ postsList, isLoggedIn, postId, setPostId }) => {
-  console.log("postsList from Posts.js", postsList);
+//   console.log("postsList from Posts.js", postsList);
 
   return (
     <div>
