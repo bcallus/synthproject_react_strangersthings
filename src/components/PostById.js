@@ -1,17 +1,25 @@
 import React from "react";
 import { deletePost } from "../api";
 
-const PostById = ({ postsList, setPostId, postId, postById, setPostById, token }) => {
+const PostById = ({ postsList, setPostsList, setPostId, postId, postById, setPostById, token }) => {
   console.log("postsList in PostById", postsList);
   console.log("postId in PostById", postId);
-  console.log("postById state in PostById", postById);
+//   console.log("postById state in PostById", postById);
 
     const handleDelete = async (event) => {
         event.preventDefault();
         console.log("token in handleDelete", token)
+        console.log("postId in handleDelete", postId)
         const data = await deletePost(postId, token)
         console.log("data from handleDelete", data)
+
+        const filteredPostsList = postsList.filter(post => (post._id !== postId))
+        console.log("filteredPostsList", filteredPostsList)
+        setPostsList(filteredPostsList)
+        console.log("postsList after delete", postsList)
     }
+
+    //filter though posts that do not match the id number for the one you want to delete and set that new array to a variable that you then set state with
 
   return (
     <div>
@@ -19,7 +27,7 @@ const PostById = ({ postsList, setPostId, postId, postById, setPostById, token }
       {postsList.map((post) => {
         if (post._id === postId) {
           return (
-            <div className="individual-post">
+            <div className="individual-post" key={post._id}>
               <h2>{post.title}</h2>
               <p>{post.description}</p>
               <p><b>Price: </b>{post.price}</p>

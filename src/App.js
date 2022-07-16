@@ -27,7 +27,7 @@ const App = () => {
   const [userMessages, setUserMessages] = useState([]);
   const [token, setToken] = useState();
   const [postId, setPostId] = useState(" "); //has to have a space or character here
-  const [postById, setPostById] = useState({});
+  //   const [postById, setPostById] = useState({}); //dont think i need this
 
   useEffect(() => {
     fetchAllPosts(token).then((results) => {
@@ -87,8 +87,9 @@ const App = () => {
               postId={postId}
               setPostId={setPostId}
               postsList={postsList}
-              postById={postById}
-              setPostById={setPostById}
+              setPostsList={setPostsList}
+              //   postById={postById}
+              //   setPostById={setPostById}
               token={token}
             />
           }
