@@ -1,14 +1,14 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-const Post = ({ post, postsList, isLoggedIn, postId, setPostId }) => {
+const Post = ({ post, postsList, isLoggedIn, postId, setPostId }) => { //remove unused variables, they were used for console.logs
 
     const navigate = useNavigate();
 
     const navigateToId = () => {
-        console.log("this Post variable", post._id)
+        // console.log("this Post variable", post._id)
         setPostId(post._id) //do i need this state really?
-        console.log("postId from Post.js", postId)
+        // console.log("postId from Post.js", postId)
         navigate(`/posts/${post._id}`);
     }
 

@@ -27,6 +27,7 @@ const App = () => {
   const [userMessages, setUserMessages] = useState([]);
   const [token, setToken] = useState();
   const [postId, setPostId] = useState(" "); //has to have a space or character here
+  const [postById, setPostById] = useState({});
 
   useEffect(() => {
     fetchAllPosts(token).then((results) => {
@@ -81,7 +82,15 @@ const App = () => {
 
         <Route
           path={`posts/:postId`} //this needs work
-          element={<PostById postId={postId} setPostId={setPostId} postsList={postsList} />}
+          element={
+            <PostById
+              postId={postId}
+              setPostId={setPostId}
+              postsList={postsList}
+              postById={postById}
+              setPostById={setPostById}
+            />
+          }
         ></Route>
 
         <Route
