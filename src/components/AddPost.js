@@ -1,7 +1,9 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { createNewPost } from "../api";
 
 const AddPost = ({ token, postsList, setPostsList }) => {
+    const navigate = useNavigate();
 
     const [title, setTitle] = useState("")
     const [description, setDescription] = useState("")
@@ -25,7 +27,8 @@ const AddPost = ({ token, postsList, setPostsList }) => {
         console.log("postsList from addNewPost", postsList)
         setPostsList([...postsList, newPost])
         console.log("postsList from addNewPost", postsList)
-
+        alert("Your post has been sucessfully added.")
+        navigate("/posts")
     }
 
   return (

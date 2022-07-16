@@ -1,7 +1,9 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { deletePost } from "../api";
 
 const PostById = ({ postsList, setPostsList, setPostId, postId, postById, setPostById, token }) => {
+    const navigate = useNavigate();
   console.log("postsList in PostById", postsList);
   console.log("postId in PostById", postId);
 //   console.log("postById state in PostById", postById);
@@ -16,14 +18,15 @@ const PostById = ({ postsList, setPostsList, setPostId, postId, postById, setPos
         const filteredPostsList = postsList.filter(post => (post._id !== postId))
         console.log("filteredPostsList", filteredPostsList)
         setPostsList(filteredPostsList)
-        console.log("postsList after delete", postsList)
+        // console.log("postsList after delete", postsList)
+        alert("You have sucessfully deleted your post.")
+        navigate("/posts");
     }
 
     //filter though posts that do not match the id number for the one you want to delete and set that new array to a variable that you then set state with
 
   return (
     <div>
-      <h1>Test</h1>
       {postsList.map((post) => {
         if (post._id === postId) {
           return (
