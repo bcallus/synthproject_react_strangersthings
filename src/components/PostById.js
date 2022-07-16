@@ -23,7 +23,19 @@ const PostById = ({ postsList, setPostId, postId, postById, setPostById }) => {
               <p><b>Price: </b>{post.price}</p>
               <h3>Seller: {post.author.username}</h3>
               <p><b>Location: </b>{post.location}</p>
-              {post.willDeliver ? <p>Seller willing to deliver.</p> : <p>Delivery not available.</p>}
+                  {post.willDeliver ? <p>Seller willing to deliver.</p> : <p>Delivery not available.</p>}
+                  {post.isAuthor ? (
+                        <div>
+                            <button>Delete</button>
+                            <button>Edit</button>
+                        </div>
+                  ) : (
+                        <form>
+                            <label>Send Message to Seller</label>
+                            <input type="text"></input>
+                            <button type="submit">Send Message</button>
+                      </form>    
+                  )}
             </div>
           );
         }
