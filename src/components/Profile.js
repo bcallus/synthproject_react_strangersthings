@@ -17,17 +17,18 @@ const Profile = ({ token, username, userPosts, userMessages, setUserPosts, setUs
     //map over posts and messages once there are some in the data
   return (
     <div>
-      <h2>Welcome {username}!</h2>
+      <h1>Welcome {username}!</h1>
       <h2>Your Posts</h2>
       <h2>Messages Sent By Me</h2>
       {userMessages.map(message => {
         return (
-          <div>
-            {message.content} 
+          <div className="messages" key={message._id}>
+            <h3>Post Title: {message.post.title}</h3>
+            <p><b>Message Sent: </b>{message.content}</p>
             </div>
         )
       })}
-      <h2>Your Messages</h2>
+      <h2>Messages Sent To Me</h2>
     </div>
   );
 };
