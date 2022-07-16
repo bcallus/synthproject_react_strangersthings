@@ -16,9 +16,10 @@ const Post = ({ post, postsList, isLoggedIn, postId, setPostId }) => { //remove 
     <div className="individual-post">
       <h2>{post.title}</h2>
       <p>{post.description}</p>
-      <p>{post.price}</p>
-      <h2>{post.author.username}</h2>
-      <p>{post.locaiton}</p>
+      <p><b>Price: </b>{post.price}</p>
+      <h3>Seller: {post.author.username}</h3>
+      <p><b>Location: </b>{post.location}</p>
+      {post.willDeliver ? <p>Seller willing to deliver.</p> : <p>Delivery not available.</p>}
 
       {isLoggedIn ? (
         post.isAuthor ? (
