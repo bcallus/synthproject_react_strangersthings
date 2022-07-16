@@ -3,12 +3,12 @@ export const BASE_URL =
 
 export async function fetchAllPosts(token) {
   try {
-      const response = await fetch(`${BASE_URL}/posts`, {
-        headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${token}`,
-          },
-    })
+    const response = await fetch(`${BASE_URL}/posts`, {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    });
     const data = await response.json();
 
     return data;
@@ -108,6 +108,24 @@ export async function createNewPost({
       .then((response) => response.json())
       .then((result) => {
         return result;
+      });
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+export async function deletePost(postId, token) {
+  try {
+    return fetch(`${BASE_URL}/posts/${postId}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    })
+      .then((response) => response.json())
+      .then((result) => {
+          return result;
       });
   } catch (error) {
     console.error(error);

@@ -89,6 +89,7 @@ const App = () => {
               postsList={postsList}
               postById={postById}
               setPostById={setPostById}
+              token={token}
             />
           }
         ></Route>

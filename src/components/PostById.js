@@ -1,15 +1,17 @@
 import React from "react";
+import { deletePost } from "../api";
 
-const PostById = ({ postsList, setPostId, postId, postById, setPostById }) => {
+const PostById = ({ postsList, setPostId, postId, postById, setPostById, token }) => {
   console.log("postsList in PostById", postsList);
   console.log("postId in PostById", postId);
   console.log("postById state in PostById", postById);
 
-  // postsList.map(post => {
-  //     if (post._id === postId) {
-  //         console.log("this one matches", post)
-  //     }
-  // })
+    const handleDelete = async (event) => {
+        event.preventDefault();
+        console.log("token in handleDelete", token)
+        const data = await deletePost(postId, token)
+        console.log("data from handleDelete", data)
+    }
 
   return (
     <div>
@@ -26,7 +28,7 @@ const PostById = ({ postsList, setPostId, postId, postById, setPostById }) => {
                   {post.willDeliver ? <p>Seller willing to deliver.</p> : <p>Delivery not available.</p>}
                   {post.isAuthor ? (
                         <div>
-                            <button>Delete</button>
+                            <button onClick={handleDelete}>Delete</button>
                             <button>Edit</button>
                         </div>
                   ) : (
