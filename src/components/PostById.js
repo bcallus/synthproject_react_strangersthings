@@ -4,19 +4,19 @@ import { deletePost } from "../api";
 
 const PostById = ({ postsList, setPostsList, setPostId, postId, postById, setPostById, token }) => {
     const navigate = useNavigate();
-  console.log("postsList in PostById", postsList);
-  console.log("postId in PostById", postId);
+//   console.log("postsList in PostById", postsList);
+//   console.log("postId in PostById", postId);
 //   console.log("postById state in PostById", postById);
 
     const handleDelete = async (event) => {
         event.preventDefault();
-        console.log("token in handleDelete", token)
-        console.log("postId in handleDelete", postId)
+        // console.log("token in handleDelete", token)
+        // console.log("postId in handleDelete", postId)
         const data = await deletePost(postId, token)
-        console.log("data from handleDelete", data)
+        // console.log("data from handleDelete", data)
 
         const filteredPostsList = postsList.filter(post => (post._id !== postId))
-        console.log("filteredPostsList", filteredPostsList)
+        // console.log("filteredPostsList", filteredPostsList)
         setPostsList(filteredPostsList)
         // console.log("postsList after delete", postsList)
         alert("You have sucessfully deleted your post.")
@@ -43,8 +43,10 @@ const PostById = ({ postsList, setPostsList, setPostId, postId, postById, setPos
                         </div>
                   ) : (
                         <form>
-                            <label>Send Message to Seller</label>
-                            <input type="text"></input>
+                              <label>Send Message to Seller:</label>
+                              <br />
+                              <textarea rows="10" cols="50" placeholder="Write message here..."></textarea>
+                              <br />
                             <button type="submit">Send Message</button>
                       </form>    
                   )}
