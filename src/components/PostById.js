@@ -23,7 +23,6 @@ const PostById = ({ postsList, setPostsList, setPostId, postId, postById, setPos
         navigate("/posts");
     }
 
-    //filter though posts that do not match the id number for the one you want to delete and set that new array to a variable that you then set state with
 
   return (
     <div>

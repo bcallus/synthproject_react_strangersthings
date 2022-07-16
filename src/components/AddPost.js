@@ -8,7 +8,7 @@ const AddPost = ({ token, postsList, setPostsList }) => {
     const [title, setTitle] = useState("")
     const [description, setDescription] = useState("")
     const [price, setPrice] = useState("")
-    const [location, setLocation] = useState("")
+    const [location, setLocation] = useState("[On Request]")
     const [willDeliver, setWillDeliver] = useState(false)
 
     const handleSubmit = async (event) => {
@@ -36,15 +36,15 @@ const AddPost = ({ token, postsList, setPostsList }) => {
       <h1>Add New Post</h1>
       <label>
         <p>Title</p>
-              <input type="text" onChange={(event) => {setTitle(event.target.value)} } />
+              <input type="text" onChange={(event) => {setTitle(event.target.value)} } required/>
       </label>
       <label>
         <p>Description</p>
-              <input type="text" onChange={(event) => {setDescription(event.target.value)}} />
+              <input type="text" onChange={(event) => {setDescription(event.target.value)}} required/>
       </label>
       <label>
         <p>Price</p>
-        <input type="number" onChange={(event) => {setPrice(event.target.value)}}/> {/*make type for currency? */}
+        <input type="number" onChange={(event) => {setPrice(event.target.value)}} required/> {/*make type for currency? */}
       </label>
       <label>
         <p>Location</p>
