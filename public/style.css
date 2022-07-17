@@ -45,6 +45,20 @@ body {
     text-shadow: 2px 2px 8px #7595a2
 }
 
+.home-page {
+    border: solid black 2px;
+    text-align: center;
+}
+
+.home-page h1 {
+    border-bottom: solid #04030f 2px;
+    background-color: #7595A2;
+    color: #04030f;
+    text-shadow: 2px 2px 4px #776885;
+    margin: 0;
+    padding: 2rem;
+}
+
 .post-page-header {
     display: flex;
     align-items: center;
