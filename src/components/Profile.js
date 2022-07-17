@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { getUserProfile } from "../api";
 
-const Profile = ({ token, username, userPosts, userMessages, setUserPosts, setUserMessages, inboxMessages, setInboxMessages }) => {
+const Profile = ({ token, username, userPosts, userMessages, setUserPosts, setUserMessages,}) => {
   useEffect(() => {
     async function fetchMyProfile() {
       let data = await getUserProfile({ token });
@@ -13,20 +13,7 @@ const Profile = ({ token, username, userPosts, userMessages, setUserPosts, setUs
     fetchMyProfile();
   }, []); //hover over squiggle. what does it mean?
 
-  console.log("inbox messages from Profile.js", inboxMessages)
-
-  userPosts.map(userPost => {
-    if (userPost.messages.length > 0) {
-      console.log("userPost.messages", userPost.messages)
-      const inboxMessages = userPost.messages
-      console.log("inboxMessages", inboxMessages)
-      inboxMessages.map(message => {
-      console.log(message.content)
-      })
-    }
-  })
-
-    //map over posts and messages once there are some in the data
+ 
   return (
     <div>
       <h1>Welcome {username}!</h1>
@@ -39,6 +26,14 @@ const Profile = ({ token, username, userPosts, userMessages, setUserPosts, setUs
             <p><b>Price: </b>{userPost.price}</p>
             {userPost.willDeliver ? <p>Seller willing to deliver.</p> : <p>Delivery not available.</p>}
             {userPost.active ? <p><b>This post is currently active.</b></p> : <p><b>This post has been deleted and is not currently active.</b></p>}
+            {userPost.messages ? userPost.messages.map(message => {
+              return (
+                <div className="inbox-message" key="message._id">
+                  <p><b>Message Received for this Post:</b></p>
+                  <p>{message.content}</p>
+                </div>
+              )
+            }) : null}
           </div>
         )
       })}
@@ -51,23 +46,6 @@ const Profile = ({ token, username, userPosts, userMessages, setUserPosts, setUs
             </div>
         )
       })}
-      <h2>Messages Sent To Me</h2>
-      {userPosts.map(userPost => {
-    if (userPost.messages.length > 0) {
-      console.log("userPost.messages", userPost.messages)
-      const inboxMessages = userPost.messages
-      console.log("inboxMessages", inboxMessages)
-      inboxMessages.map(message => {
-        return (
-          <div>
-            {console.log(message.content)}
-            <h2>{message.content}</h2>
-          </div>
-        )
-      })
-    }
-      })}
-      <h2>test</h2>
     </div>
   );
 };

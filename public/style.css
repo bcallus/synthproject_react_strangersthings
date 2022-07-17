@@ -64,3 +64,11 @@ input::-webkit-inner-spin-button {
     border: solid black;
     margin: 1rem;
 }
+
+.inbox-message {
+    background-color: rgb(235, 239, 247);
+    padding: .5rem;
+    gap: 2rem;
+    border: solid black;
+    margin: 1rem;
+}
