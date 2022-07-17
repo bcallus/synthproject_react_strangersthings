@@ -32,8 +32,8 @@ const AddPost = ({ token, postsList, setPostsList }) => {
     }
 
   return (
-    <form className="add-new-post-form" onSubmit={handleSubmit}>
-      <h1>Add New Post</h1>
+    <form className="form" onSubmit={handleSubmit}>
+      <h2>Add New Post</h2>
       <label>
         <p>Title</p>
               <input type="text" onChange={(event) => {setTitle(event.target.value)} } required/>
@@ -51,9 +51,10 @@ const AddPost = ({ token, postsList, setPostsList }) => {
         <input type="text" onChange={(event) => {setLocation(event.target.value)}}/>
       </label>
       <label>
-        <div>
-          <p>Willing to deliver</p>
-          <input type="checkbox" onChange={(event) => {setWillDeliver(!willDeliver)}}/> {/*fix inline style here */}
+        <div className="inline-checkbox">
+          <p>Willing to deliver?</p>
+          <input type="checkbox" onChange={(event) => { setWillDeliver(!willDeliver) }} />
+          {/*fix inline style here */}
         </div>
       </label>
       <button type="submit">Create</button>

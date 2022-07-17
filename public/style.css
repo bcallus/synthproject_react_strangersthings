@@ -83,7 +83,7 @@ body {
     margin-top: .5rem;
 }
 
-.register-form {
+.form {
     border: black solid 2px;
     background-color: #776885;
     margin: 2rem;
@@ -94,7 +94,7 @@ body {
     box-shadow: 10px 10px 8px #888888;
 }
 
-.register-form h2 {
+.form h2 {
     background-color: #776885;
     text-align: center;
     color: #f7e7de;
@@ -102,7 +102,7 @@ body {
     margin-top: 0;
 }
 
-.register-form p {
+.form p {
     background-color: #776885;
     color: #04030f;
     font-weight: bold;
@@ -111,21 +111,33 @@ body {
     margin-bottom: .4rem;
 }
 
-.register-form input {
+.form input {
     width: 23vw;
 }
 
-.register-form div {
+.form div {
     background-color: #776885;
     padding: 1rem, 2rem, 1rem, 2rem;
 }
 
-.register-form button {
+.form button {
     text-align: end;
     margin-top: 1rem;
     padding: .4rem;
     
 }
+
+.inline-checkbox p {
+    text-align: center;
+}
+
+input[type="checkbox"]{
+    display: inline-block;
+}
+/* 
+.inline-checkbox {
+    display: inline;
+} */
 
 .post-page-header {
     display: flex;
@@ -142,12 +154,6 @@ body {
     background-color: rgb(196, 211, 240);
     padding: 1rem;
     margin-bottom: 1rem;
-}
-
-.add-new-post-form input {
-    box-sizing: border-box;
-    border-radius: 5px;
-    border: 3px, solid, blue;
 }
 
 input::-webkit-outer-spin-button,

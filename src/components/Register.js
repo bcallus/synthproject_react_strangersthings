@@ -42,7 +42,7 @@ const Register = ({
   };
 
   return (
-    <form className="register-form" onSubmit={handleSubmit}>
+    <form className="form" onSubmit={handleSubmit}>
       <h2>Register New Account</h2>
       <label>
         <p>Username:</p>

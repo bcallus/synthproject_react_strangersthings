@@ -35,7 +35,7 @@ const Login = ({
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="form" onSubmit={handleSubmit}>
       <h2>Log In</h2>
       <label>
         <p>Username</p>
