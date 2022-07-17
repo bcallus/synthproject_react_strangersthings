@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 
-const SearchBar = (postsList) => {
-  const [searchTerm, setSearchTerm] = useState("");
+const SearchBar = ({ postsList, searchTerm, setSearchTerm, filteredPosts, setFilteredPosts }) => {
+    // const [searchTerm, setSearchTerm] = useState("");
+    // const [filteredPosts, setFilteredPosts] = useState([]);
 
   const handleSearch = async (event) => {
     event.preventDefault();
-    console.log(postsList.postsList);
+    console.log(postsList);
     // console.log("searchTerm", searchTerm);
 
     function findMatches(post, keyword) {
@@ -21,8 +22,10 @@ const SearchBar = (postsList) => {
         return true;
     }
       
-    const filteredPosts = postsList.postsList.filter(post => findMatches(post, searchTerm));
-    console.log("filteredPosts", filteredPosts)
+    const filteredPostsArray = postsList.filter(post => findMatches(post, searchTerm));
+    console.log("filteredPostsArray", filteredPostsArray)
+    setFilteredPosts(filteredPostsArray)
+    console.log(filteredPosts)
     // const postsToDisplay = searchTerm.length ? filteredPosts : posts;
   };
 

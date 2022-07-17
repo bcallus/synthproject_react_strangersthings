@@ -40,14 +40,14 @@ const App = () => {
   // console.log("postsList", postsList)
   // console.log("post", post)
 
-  const getToken = () => {
+  // const getToken = () => {
     //is this ever called on?
     //add another useEffect that checks if token exists and user is logged in (is it in local storage)
-    const tokenString = localStorage.getItem("token");
-    const userToken = JSON.parse(tokenString);
+    // const tokenString = localStorage.getItem("token");
+    // const userToken = JSON.parse(tokenString);
     // console.log("userToken", userToken)
-    return userToken.token; //there was a ? here on repo //in 2nd useEffect take this value and set it to setToken and setIsLoggedIn
-  };
+    // return userToken.token; //there was a ? here on repo //in 2nd useEffect take this value and set it to setToken and setIsLoggedIn
+  // };
 
   // console.log("token in App.js", token)
 
@@ -98,19 +98,19 @@ const App = () => {
           }
         ></Route>
 
-        <Route
-          path="/profile"
-          element={
-            <Profile
-              token={token}
-              username={username}
-              userPosts={userPosts}
-              setUserPosts={setUserPosts}
-              userMessages={userMessages}
-              setUserMessages={setUserMessages}
-            />
-          }
-        ></Route>
+          <Route
+            path="/profile"
+            element={
+              <Profile
+                token={token}
+                username={username}
+                userPosts={userPosts}
+                setUserPosts={setUserPosts}
+                userMessages={userMessages}
+                setUserMessages={setUserMessages}
+              />
+            }
+          ></Route>
 
         <Route
           path="/login"
