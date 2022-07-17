@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+    background-color: #f7e7de;
 }
 
 body {
@@ -11,21 +12,37 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: gray;
+    background-color: #5F1A37;
     padding: 0 1rem;
+}
+
+.navbar h1 {
+    background-color: #5F1A37;
+    color:  #f7e7de;
+    text-shadow: 2px 2px 4px #04030f;
 }
 
 
 .navbar ul {
+    background-color: #5F1A37;
     list-style-type: none;
     display: flex;
     gap: 1rem;
 }
 
+.navbar-tabs {
+    background-color: #5F1A37;
+}
 .navbar-tabs a {
-    color: black;
+    background-color: #5F1A37;
+    color:  #f7e7de;
+    text-shadow: 2px 2px 4px #04030f;
     text-decoration: none;
     font-size: 20px;
+}
+
+.navbar-tabs a:hover {
+    text-shadow: 2px 2px 8px #7595a2
 }
 
 .post-page-header {
