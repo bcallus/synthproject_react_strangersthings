@@ -11,7 +11,7 @@ const postsToDisplay = searchTerm.length ? filteredPosts : postsList;
   return (
     <div>
       <div className="post-page-header">
-        <h1>Posts</h1>
+      <h1 className="post-page-header">Things Posted</h1>
         {isLoggedIn ? <Link to="/posts/add">Add New Post</Link> : null}
         {isLoggedIn ? <SearchBar postsList={postsList} filteredPosts={filteredPosts} setFilteredPosts={setFilteredPosts} searchTerm={searchTerm} setSearchTerm={setSearchTerm} /> : null}
       </div>

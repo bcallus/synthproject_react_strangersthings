@@ -134,20 +134,36 @@ body {
 input[type="checkbox"]{
     display: inline-block;
 }
-/* 
-.inline-checkbox {
-    display: inline;
-} */
 
 .post-page-header {
+    background-color: #7595A2;
     display: flex;
+    justify-content: space-around;
     align-items: center;
-    background-color: rgb(130, 183, 247);
     padding: 1rem;
     gap: 1rem;
+    border-bottom: solid #04030f 2px;
+}
+
+.post-page-header h1 {
+    background-color: #7595A2;
+    color: #04030f;
+    text-shadow: 2px 2px 4px #776885;
+    margin: 0;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    border: none;
 }
 .post-page-header a {
+    font-size: 20px;
+    background-color: #7595A2;
     text-decoration: none;
+    color: #f7e7de;
+    text-shadow: 2px 2px 4px #04030f;
+}
+
+.post-page-header a:hover {
+    text-shadow: 2px 2px 8px #7595a2
 }
 
 .individual-post { /* fix this later */
