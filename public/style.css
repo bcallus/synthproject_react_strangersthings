@@ -83,6 +83,52 @@ body {
     margin-top: .5rem;
 }
 
+.register-form {
+    border: black solid 2px;
+    background-color: #776885;
+    margin: 2rem;
+    margin: 2rem auto 2rem auto;
+    padding: 2rem;
+    width: 30vw;
+    text-align: left;
+    box-shadow: 10px 10px 8px #888888;
+}
+
+.register-form h2, p {
+    background-color: #776885;
+}
+
+.register-form h2 {
+    text-align: center;
+    color: #f7e7de;
+    text-shadow: 2px 2px 4px #04030f;
+    margin-top: 0;
+}
+
+.register-form p {
+    color: #04030f;
+    font-weight: bold;
+    font-size: 18px;
+    text-shadow: 2px 2px 4px  #a498af;
+    margin-bottom: .4rem;
+}
+
+.register-form input {
+    width: 23vw;
+}
+
+.register-form div {
+    background-color: #776885;
+    padding: 1rem, 2rem, 1rem, 2rem;
+}
+
+.register-form button {
+    text-align: end;
+    margin-top: 1rem;
+    padding: .4rem;
+    
+}
+
 .post-page-header {
     display: flex;
     align-items: center;

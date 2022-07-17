@@ -47,10 +47,10 @@ const Register = ({
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="register-form" onSubmit={handleSubmit}>
       <h2>Register New Account</h2>
       <label>
-        <p>Username</p>
+        <p>Username:</p>
         <input
           type="text"
           minLength="5"
@@ -59,7 +59,7 @@ const Register = ({
         />
       </label>
       <label>
-        <p>Password</p>
+        <p>Password:</p>
         <input
           type="password"
           name="password"
@@ -69,11 +69,11 @@ const Register = ({
         />
       </label>
       <label>
-        <p>Confirm Password</p>
+        <p>Confirm Password:</p>
         <input type="password" name="confirm" minLength="5" required />
       </label>
       <div>
-        <button type="submit">Submit</button>
+      <button type="submit">Submit</button>
       </div>
     </form>
   );
