@@ -4,8 +4,10 @@
 }
 
 body {
-    margin: 0;
-    padding: 1rem;
+    margin: 1rem;
+    padding: 0 rem;
+    border: solid  #04030f .5px;
+    box-shadow: 10px 10px 8px #888888;
 }
 
 .navbar {
@@ -45,18 +47,40 @@ body {
     text-shadow: 2px 2px 8px #7595a2
 }
 
-.home-page {
-    border: solid black 2px;
+.home-title {
     text-align: center;
 }
 
-.home-page h1 {
+.home-title h1 {
+    background-color: #7595A2;
+    color: #04030f;
+    text-shadow: 2px 2px 4px #776885;
+    margin: 0;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+}
+
+.home-title p {
     border-bottom: solid #04030f 2px;
     background-color: #7595A2;
     color: #04030f;
     text-shadow: 2px 2px 4px #776885;
     margin: 0;
-    padding: 2rem;
+    padding-bottom: 2rem;
+}
+
+.home-body {
+    padding: 1rem;
+    text-align: center;
+}
+
+.home-body h3 {
+    margin-bottom: .5rem;
+    margin-top: 2rem;
+}
+
+.home-body p {
+    margin-top: .5rem;
 }
 
 .post-page-header {
