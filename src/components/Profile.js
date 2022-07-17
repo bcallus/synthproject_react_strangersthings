@@ -31,6 +31,16 @@ const Profile = ({ token, username, userPosts, userMessages, setUserPosts, setUs
     <div>
       <h1>Welcome {username}!</h1>
       <h2>Your Posts</h2>
+      {userPosts.map(userPost => {
+        return (
+          <div className="messages" key={userPost._id}>
+            <h3>{userPost.title}</h3>
+            <p>{userPost.description}</p>
+            <p><b>Price: </b>{userPost.price}</p>
+            {userPost.willDeliver ? <p>Seller willing to deliver.</p> : <p>Delivery not available.</p>}
+          </div>
+        )
+      })}
       <h2>Messages Sent By Me</h2>
       {userMessages.map(message => {
         return (
