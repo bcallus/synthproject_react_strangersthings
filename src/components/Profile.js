@@ -38,6 +38,7 @@ const Profile = ({ token, username, userPosts, userMessages, setUserPosts, setUs
             <p>{userPost.description}</p>
             <p><b>Price: </b>{userPost.price}</p>
             {userPost.willDeliver ? <p>Seller willing to deliver.</p> : <p>Delivery not available.</p>}
+            {userPost.active ? <p><b>This post is currently active.</b></p> : <p><b>This post has been deleted and is not currently active.</b></p>}
           </div>
         )
       })}
