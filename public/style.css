@@ -143,6 +143,7 @@ input[type="checkbox"]{
     padding: 1rem;
     gap: 1rem;
     border-bottom: solid #04030f 2px;
+    margin-bottom: 1rem;
 }
 
 .post-page-header h1 {
@@ -167,9 +168,15 @@ input[type="checkbox"]{
 }
 
 .individual-post { /* fix this later */
-    background-color: rgb(196, 211, 240);
+    background-color:#f7e7de;
     padding: 1rem;
     margin-bottom: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    border: black solid 1px;
+    width: 75vw;
+    text-align: center;
+    box-shadow: 10px 10px 8px #888888;
 }
 
 input::-webkit-outer-spin-button,
@@ -179,15 +186,18 @@ input::-webkit-inner-spin-button {
 }
 
 .messages {
-    background-color: rgb(196, 211, 240);
-    padding: .5rem;
-    gap: 2rem;
-    border: solid black;
-    margin: 1rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    border: black solid 1px;
+    width: 75vw;
+    text-align: center;
+    box-shadow: 10px 10px 8px #888888;
 }
 
 .inbox-message {
-    background-color: rgb(235, 239, 247);
+    background-color: #f7e7de;
     padding: .5rem;
     gap: 2rem;
     border: solid black;
