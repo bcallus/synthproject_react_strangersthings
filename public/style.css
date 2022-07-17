@@ -94,11 +94,8 @@ body {
     box-shadow: 10px 10px 8px #888888;
 }
 
-.register-form h2, p {
-    background-color: #776885;
-}
-
 .register-form h2 {
+    background-color: #776885;
     text-align: center;
     color: #f7e7de;
     text-shadow: 2px 2px 4px #04030f;
@@ -106,6 +103,7 @@ body {
 }
 
 .register-form p {
+    background-color: #776885;
     color: #04030f;
     font-weight: bold;
     font-size: 18px;

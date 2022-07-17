@@ -13,17 +13,12 @@ const Register = ({
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-      if (confirmPassword()) {
+    if (confirmPassword()) {
       const data = await registerUser({
         username,
         password,
       });
-        const token = data.data.token;
-        // console.log("data", data);
-    //   console.log("username", username, "password", password);
-    //   console.log("data", data);
-    //   console.log("Token in Register", token);
-    //   console.log("set Token in Register", setToken);
+      const token = data.data.token;
       localStorage.setItem("token", JSON.stringify(token));
       setToken(token);
       data.success
@@ -32,7 +27,7 @@ const Register = ({
       if (token) {
         navigate("/login");
       }
-      } 
+    }
   };
 
   const confirmPassword = () => {
@@ -73,7 +68,7 @@ const Register = ({
         <input type="password" name="confirm" minLength="5" required />
       </label>
       <div>
-      <button type="submit">Submit</button>
+        <button type="submit">Submit</button>
       </div>
     </form>
   );
