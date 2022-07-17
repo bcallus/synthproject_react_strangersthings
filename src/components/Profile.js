@@ -28,7 +28,7 @@ const Profile = ({ token, username, userPosts, userMessages, setUserPosts, setUs
             {userPost.active ? <p><b>This post is currently active.</b></p> : <p><b>This post has been deleted and is not currently active.</b></p>}
             {userPost.messages ? userPost.messages.map(message => {
               return (
-                <div className="inbox-message" key="message._id">
+                <div className="inbox-message" key={message._id}>
                   <p><b>Message Received for this Post:</b></p>
                   <p>{message.content}</p>
                 </div>
