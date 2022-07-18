@@ -168,7 +168,7 @@ input[type="checkbox"]{
 }
 
 .individual-post { /* fix this later */
-    background-color:#f7e7de;
+    background-color:#cfbbb0;
     padding: 1rem;
     margin-bottom: 1rem;
     margin-left: auto;
@@ -178,6 +178,20 @@ input[type="checkbox"]{
     text-align: center;
     box-shadow: 10px 10px 8px #888888;
 }
+
+.individual-post > h2 {
+    background-color:#cfbbb0;
+}
+.individual-post > p {
+    background-color:#cfbbb0;
+}
+.individual-post > h3 {
+    background-color:#cfbbb0;
+}
+.individual-post > p, b {
+    background-color:#cfbbb0;
+}
+
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -194,6 +208,16 @@ input::-webkit-inner-spin-button {
     width: 75vw;
     text-align: center;
     box-shadow: 10px 10px 8px #888888;
+    background-color:#cfbbb0;
+}
+.messages > h3 {
+    background-color:#cfbbb0;
+}
+.messages > p {
+    background-color:#cfbbb0;
+}
+.messages > p, b {
+    background-color:#cfbbb0;
 }
 
 .inbox-message {
@@ -202,4 +226,12 @@ input::-webkit-inner-spin-button {
     gap: 2rem;
     border: solid black;
     margin: 1rem;
+}
+
+.inbox-message p {
+    background-color: #f7e7de;
+}
+
+.inbox-message-bold b {
+    background-color: #f7e7de;
 }

@@ -29,7 +29,7 @@ const Profile = ({ token, username, userPosts, userMessages, setUserPosts, setUs
             {userPost.messages ? userPost.messages.map(message => {
               return (
                 <div className="inbox-message" key={message._id}>
-                  <p><b>Message Received for this Post:</b></p>
+                  <p className="inbox-message-bold"><b>Message Received for this Post:</b></p>
                   <p>{message.content}</p>
                 </div>
               )
