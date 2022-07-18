@@ -6,7 +6,7 @@ export async function fetchAllPosts(token) {
     const response = await fetch(`${BASE_URL}/posts`, {
       headers: {
         "Content-Type": "application/json",
-        "Authorization": `Bearer ${token}`,
+        Authorization: `Bearer ${token}`,
       },
     });
     const data = await response.json();
@@ -68,7 +68,7 @@ export async function getUserProfile({ token }) {
     return fetch(`${BASE_URL}/users/me`, {
       headers: {
         "Content-Type": "application/json",
-        "Authorization": `Bearer ${token}`,
+        Authorization: `Bearer ${token}`,
       },
     })
       .then((response) => response.json())
@@ -93,7 +93,7 @@ export async function createNewPost({
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Authorization": `Bearer ${token}`,
+        Authorization: `Bearer ${token}`,
       },
       body: JSON.stringify({
         post: {
@@ -120,12 +120,12 @@ export async function deletePost(postId, token) {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
-        "Authorization": `Bearer ${token}`,
+        Authorization: `Bearer ${token}`,
       },
     })
       .then((response) => response.json())
       .then((result) => {
-          return result;
+        return result;
       });
   } catch (error) {
     console.error(error);
@@ -138,20 +138,19 @@ export async function createMessage(postId, token, message) {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Authorization": `Bearer ${token}`,
+        Authorization: `Bearer ${token}`,
       },
       body: JSON.stringify({
         message: {
-          content: `${message}`
-        }
-      })
+          content: `${message}`,
+        },
+      }),
     })
       .then((response) => response.json())
       .then((result) => {
-          return result;
+        return result;
       });
-  }
-  catch (error) {
+  } catch (error) {
     console.error(error);
   }
 }

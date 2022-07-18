@@ -4,16 +4,23 @@ import Post from "./Post";
 import SearchBar from "./SearchBar";
 
 const Posts = ({ postsList, isLoggedIn, postId, setPostId }) => {
-  //   console.log("postsList from Posts.js", postsList);
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredPosts, setFilteredPosts] = useState([]);
-const postsToDisplay = searchTerm.length ? filteredPosts : postsList;
+  const postsToDisplay = searchTerm.length ? filteredPosts : postsList;
   return (
     <div>
       <div className="post-page-header">
-      <h1 className="post-page-header">Things Posted</h1>
+        <h1 className="post-page-header">Things Posted</h1>
         {isLoggedIn ? <Link to="/posts/add">Add New Post</Link> : null}
-        {isLoggedIn ? <SearchBar postsList={postsList} filteredPosts={filteredPosts} setFilteredPosts={setFilteredPosts} searchTerm={searchTerm} setSearchTerm={setSearchTerm} /> : null}
+        {isLoggedIn ? (
+          <SearchBar
+            postsList={postsList}
+            filteredPosts={filteredPosts}
+            setFilteredPosts={setFilteredPosts}
+            searchTerm={searchTerm}
+            setSearchTerm={setSearchTerm}
+          />
+        ) : null}
       </div>
       {postsToDisplay
         ? postsToDisplay.map((post) => (

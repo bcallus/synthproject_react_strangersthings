@@ -1,18 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 
 const SearchBar = ({ postsList, searchTerm, setSearchTerm, filteredPosts, setFilteredPosts }) => {
-    // const [searchTerm, setSearchTerm] = useState("");
-    // const [filteredPosts, setFilteredPosts] = useState([]);
 
   const handleSearch = async (event) => {
     event.preventDefault();
-    console.log(postsList);
-    // console.log("searchTerm", searchTerm);
 
     function findMatches(post, keyword) {
         keyword = searchTerm.toLowerCase();
-        console.log("searchTerm", searchTerm)
-          console.log("keyword", keyword)
       if (
         post.title.toLowerCase().includes(keyword) ||
         post.description.toLowerCase().includes(keyword) ||
@@ -23,10 +17,7 @@ const SearchBar = ({ postsList, searchTerm, setSearchTerm, filteredPosts, setFil
     }
       
     const filteredPostsArray = postsList.filter(post => findMatches(post, searchTerm));
-    console.log("filteredPostsArray", filteredPostsArray)
     setFilteredPosts(filteredPostsArray)
-    console.log(filteredPosts)
-    // const postsToDisplay = searchTerm.length ? filteredPosts : posts;
   };
 
   return (

@@ -35,6 +35,7 @@ body {
 .navbar-tabs {
     background-color: #5F1A37;
 }
+
 .navbar-tabs a {
     background-color: #5F1A37;
     color:  #f7e7de;
@@ -155,6 +156,7 @@ input[type="checkbox"]{
     padding-bottom: 2rem;
     border: none;
 }
+
 .post-page-header a {
     font-size: 20px;
     background-color: #7595A2;
@@ -183,18 +185,23 @@ input[type="checkbox"]{
 .individual-post > h2 {
     background-color:#cfbbb0;
 }
+
 .individual-post > p {
     background-color:#cfbbb0;
 }
+
 .individual-post > h3 {
     background-color:#cfbbb0;
 }
+
 .individual-post > p, b {
     background-color:#cfbbb0;
 }
+
 .individual-post > div {
     background-color:#cfbbb0;
 }
+
 .individual-post > button {
     gap: 1rem;
     margin-right: 1rem;
@@ -218,12 +225,15 @@ input::-webkit-inner-spin-button {
     box-shadow: 10px 10px 8px #888888;
     background-color:#cfbbb0;
 }
+
 .messages > h3 {
     background-color:#cfbbb0;
 }
+
 .messages > p {
     background-color:#cfbbb0;
 }
+
 .messages > p, b {
     background-color:#cfbbb0;
 }
@@ -250,7 +260,7 @@ input::-webkit-inner-spin-button {
     border: solid black 1px;
 }
 
-.profile-header {
+.profile-header, .logout-header {
     background-color: #7595A2;
     color: #04030f;
     text-shadow: 2px 2px 4px #776885;
@@ -263,4 +273,10 @@ input::-webkit-inner-spin-button {
 
 .profile-title-section {
     text-align: center;
+}
+
+.logout-button {
+    margin: 1rem;
+    background-color: #cfbbb0;
+    
 }

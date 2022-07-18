@@ -5,34 +5,22 @@ import { createMessage, deletePost } from "../api";
 const PostById = ({
   postsList,
   setPostsList,
-  setPostId,
   postId,
-  postById,
-  setPostById,
   token,
   message,
   setMessage,
 }) => {
   const navigate = useNavigate();
-  //   console.log("postsList in PostById", postsList);
-  //   console.log("postId in PostById", postId);
-  //   console.log("postById state in PostById", postById);
 
   const handleDelete = async (event) => {
     event.preventDefault();
-    // console.log("token in handleDelete", token)
-    // console.log("postId in handleDelete", postId)
     const data = await deletePost(postId, token);
-    // console.log("data from handleDelete", data)
-
     const filteredPostsList = postsList.filter((post) => post._id !== postId);
-    // console.log("filteredPostsList", filteredPostsList)
     setPostsList(filteredPostsList);
-    // console.log("postsList after delete", postsList)
     if (data.success) {
-      alert("You have sucessfully deleted your post.")
+      alert("You have sucessfully deleted your post.");
     } else {
-      alert("There has been an error. Please try again.")
+      alert("There has been an error. Please try again.");
     }
     navigate("/profile");
   };
@@ -41,11 +29,11 @@ const PostById = ({
     event.preventDefault();
     console.log("message before api call", message);
     const data = await createMessage(postId, token, message);
-    console.log("data returned from createMessage Api function", data)
+    console.log("data returned from createMessage Api function", data);
     if (data.success) {
-      alert("Your message has been sent!")
+      alert("Your message has been sent!");
     } else {
-      alert("There has been an error. Please try again.")
+      alert("There has been an error. Please try again.");
     }
     navigate("/profile");
   };

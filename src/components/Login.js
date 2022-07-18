@@ -8,7 +8,6 @@ const Login = ({
   setUsername,
   setPassword,
   setToken,
-  isLoggedIn,
   setIsLoggedIn,
 }) => {
   const navigate = useNavigate();
@@ -22,11 +21,8 @@ const Login = ({
     });
     if (data.success) {
       setIsLoggedIn(true);
-    //   console.log("data", data);
-    //   console.log("username: ", username, "password: ", password);
       const token = data.data.token;
       setToken(token);
-    //   console.log("token in login", token);
       alert(`${data.data.message}`);
       navigate("/profile");
     } else {
