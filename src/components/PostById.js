@@ -27,9 +27,7 @@ const PostById = ({
 
   const handleMessage = async (event) => {
     event.preventDefault();
-    console.log("message before api call", message);
     const data = await createMessage(postId, token, message);
-    console.log("data returned from createMessage Api function", data);
     if (data.success) {
       alert("Your message has been sent!");
     } else {
