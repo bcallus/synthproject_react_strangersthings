@@ -170,6 +170,7 @@ input[type="checkbox"]{
 .individual-post { /* fix this later */
     background-color:#cfbbb0;
     padding: 1rem;
+    margin-top: 1rem;
     margin-bottom: 1rem;
     margin-left: auto;
     margin-right: auto;
@@ -190,6 +191,13 @@ input[type="checkbox"]{
 }
 .individual-post > p, b {
     background-color:#cfbbb0;
+}
+.individual-post > div {
+    background-color:#cfbbb0;
+}
+.individual-post > button {
+    gap: 1rem;
+    margin-right: 1rem;
 }
 
 
@@ -234,4 +242,25 @@ input::-webkit-inner-spin-button {
 
 .inbox-message-bold b {
     background-color: #f7e7de;
+}
+
+.send-message-form {
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    border: solid black 1px;
+}
+
+.profile-header {
+    background-color: #7595A2;
+    color: #04030f;
+    text-shadow: 2px 2px 4px #776885;
+    margin: 0;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    text-align: center;
+    border-bottom: solid #04030f 2px;
+}
+
+.profile-title-section {
+    text-align: center;
 }

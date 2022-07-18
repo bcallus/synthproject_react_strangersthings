@@ -75,10 +75,9 @@ const PostById = ({
               {post.isAuthor ? (
                 <div>
                   <button onClick={handleDelete}>Delete</button>
-                  <button>Edit</button>
                 </div>
               ) : (
-                <form onSubmit={handleMessage}>
+                <form className="send-message-form" onSubmit={handleMessage}>
                   <label>Send Message to Seller:</label>
                   <br />
                   <textarea

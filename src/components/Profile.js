@@ -16,8 +16,8 @@ const Profile = ({ token, username, userPosts, userMessages, setUserPosts, setUs
  
   return (
     <div>
-      <h1>Welcome {username}!</h1>
-      <h2>Your Posts</h2>
+      <h1 className="profile-header">Welcome to your profile, {username}.</h1>
+      <h2 className="profile-title-section">Your Posts:</h2>
       {userPosts.map(userPost => {
         return (
           <div className="messages" key={userPost._id}>
@@ -37,7 +37,7 @@ const Profile = ({ token, username, userPosts, userMessages, setUserPosts, setUs
           </div>
         )
       })}
-      <h2>Messages Sent By Me</h2>
+      <h2 className="profile-title-section">Messages Sent By Me:</h2>
       {userMessages.map(message => {
         return (
           <div className="messages" key={message._id}>

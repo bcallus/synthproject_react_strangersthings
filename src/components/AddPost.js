@@ -44,7 +44,7 @@ const AddPost = ({ token, postsList, setPostsList }) => {
       </label>
       <label>
         <p>Price</p>
-        <input type="number" onChange={(event) => {setPrice(event.target.value)}} required/> {/*make type for currency? */}
+        <input type="text" onChange={(event) => {setPrice(event.target.value)}} required/>
       </label>
       <label>
         <p>Location</p>
